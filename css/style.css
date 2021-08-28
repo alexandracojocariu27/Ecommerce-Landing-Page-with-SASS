@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  box-sizing: border-box; }
+
+::before,
+::after {
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #EAF8F6; }
+
+a {
+  text-decoration: none; }
+
+#top-bar-container {
+  position: sticky;
+  top: 0;
+  z-index: 1; }
+
+div#promo-message {
+  background-color: #093A17;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 0.35rem 0; }
+  div#promo-message h1.promo-title {
+    font-size: 1rem; }
+    @media (max-width: 768px) {
+      div#promo-message h1.promo-title {
+        font-size: 0.8rem; } }
+    div#promo-message h1.promo-title span.discount {
+      border-bottom: 1.5px solid #ffffff; }
+
+#navbar {
+  background-color: #E5F0E7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+  #navbar .logo {
+    width: 3.5rem; }
+  #navbar .brand-name {
+    font-weight: 800;
+    font-size: 1.6rem; }
+  #navbar .nav-icons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    #navbar .nav-icons-wrapper .nav-icon {
+      width: 1.7rem;
+      cursor: pointer;
+      user-select: none;
+      margin-right: 0.5rem; }
+
+#parent-showcase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  #parent-showcase div.showcase {
+    width: 100%;
+    height: 50vh;
+    background: url("../images/wallpaper.jpg") center center/cover no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+  #parent-showcase div.showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); }
+  #parent-showcase div.showcase-card {
+    width: 65%;
+    background-color: #D4E9D8;
+    position: relative;
+    bottom: 3rem;
+    padding: 0.7rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    @media (max-width: 768px) {
+      #parent-showcase div.showcase-card {
+        width: 85%; } }
+    #parent-showcase div.showcase-card h1.showcase-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem; }
+    #parent-showcase div.showcase-card p.showcase-text {
+      margin-bottom: 1.1rem;
+      font-size: 1.2rem;
+      text-align: center; }
+    #parent-showcase div.showcase-card a.showcase-button {
+      border: none;
+      cursor: pointer;
+      padding: 0.6rem 1.5rem;
+      background-color: #F5B267;
+      color: black;
+      font-size: 0.9rem;
+      font-weight: 700; }
+    #parent-showcase div.showcase-card a.showcase-button:hover {
+      background-color: #F8BF81;
+      transition: background-color 0.5s; }
+
+section#section-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  section#section-description h1.description-title {
+    font-size: 1.3rem;
+    margin-bottom: 2rem; }
+  section#section-description div.description-wrapper {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    @media (max-width: 768px) {
+      section#section-description div.description-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; } }
+    section#section-description div.description-wrapper div.description {
+      display: flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      @media (max-width: 768px) {
+        section#section-description div.description-wrapper div.description {
+          margin-top: 1.5rem; } }
+      section#section-description div.description-wrapper div.description .icon-description {
+        width: 4.2rem;
+        margin-bottom: 1rem; }
+      section#section-description div.description-wrapper div.description .description-subtitle {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.7rem; }
+      section#section-description div.description-wrapper div.description .description-text {
+        font-size: 0.9rem;
+        width: 15vw;
+        text-align: center; }
+        @media (max-width: 768px) {
+          section#section-description div.description-wrapper div.description .description-text {
+            width: 80vw; } }
+
+.hr-section-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.hr-section {
+  width: 95%;
+  border: none;
+  border-top: 2px solid black;
+  margin: 3.5rem 0; }
+
+section#learn-more {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center; }
+  @media (max-width: 768px) {
+    section#learn-more {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
+  section#learn-more .video-learn-more {
+    max-width: 60vw; }
+    @media (max-width: 768px) {
+      section#learn-more .video-learn-more {
+        max-width: 90vw; } }
+  section#learn-more .content-learn-more {
+    max-width: 30vw; }
+    @media (max-width: 768px) {
+      section#learn-more .content-learn-more {
+        max-width: 90vw;
+        margin-top: 1.5rem; } }
+    section#learn-more .content-learn-more .title-learn-more {
+      font-size: 0.9rem;
+      margin-bottom: 5%; }
+    section#learn-more .content-learn-more .subtitle-learn-more {
+      font-size: 1.7rem;
+      margin-bottom: 3%; }
+    section#learn-more .content-learn-more .text-learn-more {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 2.2rem; }
+    section#learn-more .content-learn-more button.button-learn-more {
+      border: none;
+      cursor: pointer;
+      padding: 0.6rem 1.5rem;
+      background-color: #2E5D35;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 700; }
+    section#learn-more .content-learn-more button.button-learn-more:hover {
+      background-color: #468750;
+      transition: background-color 0.5s; }
+
+section#section-products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem; }
+  section#section-products div.products-wrapper {
+    width: 60%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin-top: 1rem; }
+    @media (max-width: 768px) {
+      section#section-products div.products-wrapper {
+        width: 80%; } }
+    section#section-products div.products-wrapper div.product {
+      display: inline-block;
+      padding-bottom: 1rem;
+      margin: 0 1rem; }
+      section#section-products div.products-wrapper div.product img {
+        width: 100%;
+        height: 18rem; }
+      section#section-products div.products-wrapper div.product p.product-name {
+        font-weight: bold; }
+      section#section-products div.products-wrapper div.product button {
+        border: none;
+        cursor: pointer;
+        padding: 0.3rem 0.8rem;
+        background-color: #2E5D35;
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 700; }
+
+#section-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #D4E9D8;
+  padding: 1.8rem 0;
+  margin-bottom: 6rem; }
+  #section-contact .title-contact {
+    margin-bottom: 2.5rem;
+    font-size: 1.5rem; }
+    @media (max-width: 768px) {
+      #section-contact .title-contact {
+        font-size: 0.9rem; } }
+  #section-contact .form-email-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    #section-contact .form-email-contact button.button-submit-email {
+      border: none;
+      background-color: transparent;
+      cursor: pointer; }
+      #section-contact .form-email-contact button.button-submit-email .fa-angle-right {
+        color: #2E5D35; }
+    #section-contact .form-email-contact .email-input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #2E5D35;
+      outline: none; }
+    #section-contact .form-email-contact .email-input::placeholder {
+      color: black;
+      font-weight: 400; }
+
+#footer {
+  background-color: #093A17;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+  #footer div.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3rem 0;
+    width: 100%; }
+    #footer div.footer-links div.links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      #footer div.footer-links div.links .footer-links-category-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #ffffff; }
+        @media (max-width: 768px) {
+          #footer div.footer-links div.links .footer-links-category-title {
+            font-size: 0.8rem; } }
+      #footer div.footer-links div.links .footer-link {
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: #ffffff;
+        margin-bottom: 0.7rem; }
+        @media (max-width: 768px) {
+          #footer div.footer-links div.links .footer-link {
+            font-size: 0.7rem; } }
+      #footer div.footer-links div.links .form-email-contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+        #footer div.footer-links div.links .form-email-contact .email-input-footer {
+          border: none;
+          outline: none;
+          width: 8rem;
+          padding: 2px 5px; }
+        #footer div.footer-links div.links .form-email-contact .email-input-footer::placeholder {
+          color: #093A17;
+          font-size: 0.7rem; }
+        #footer div.footer-links div.links .form-email-contact .button-submit-email-footer {
+          background-color: #093A17;
+          border: none;
+          cursor: pointer; }
+          #footer div.footer-links div.links .form-email-contact .button-submit-email-footer .fa-angle-right-footer {
+            color: #ffffff; }
+    #footer div.footer-links div.footer-icons-wrapper {
+      margin-top: 0.7rem; }
+      #footer div.footer-links div.footer-icons-wrapper .footer-icon {
+        color: #ffffff;
+        margin-right: 0.3rem; }
+  #footer div.footer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0; }
+    #footer div.footer-info a {
+      color: #ffffff;
+      margin: 0 0.7rem;
+      font-size: 0.8rem; }
+      @media (max-width: 768px) {
+        #footer div.footer-info a {
+          font-size: 0.7rem; } }

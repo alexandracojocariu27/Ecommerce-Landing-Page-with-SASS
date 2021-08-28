@@ -1,0 +1,26 @@
+// Mixins
+@mixin flex ($direction, $main-axis, $cross-axis) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $main-axis;
+    align-items: $cross-axis;
+}
+
+@mixin button-styling ($padding, $background-color, $text-color, $font-size, $font-weight) {
+    border: none;
+    cursor: pointer;
+    padding: $padding;
+    background-color: $background-color;
+    color: $text-color;
+    font-size: $font-size;
+    font-weight:$font-weight;
+}
+
+@mixin button-hover ($background-color, $transition-property, $transition-time) {
+    background-color: $background-color;
+    transition: $transition-property $transition-time;
+}
+
+@mixin mobile-devices {
+    @media(max-width: 768px) {@content}
+} 

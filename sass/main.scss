@@ -1,0 +1,443 @@
+ 
+@import 'variables';
+@import 'mixins';
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::before,
+::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: $color-primary;    
+}
+
+a {
+    text-decoration: none;
+}
+
+#top-bar-container {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+div#promo-message {
+    background-color: $color-dark-green;
+    @include flex(row, center, center); 
+    color: $color-white;
+    padding: 0.35rem 0; 
+    
+    h1.promo-title {
+        font-size: 1rem;
+        @include mobile-devices {
+            font-size: 0.8rem;
+        }
+
+        span.discount {
+            border-bottom: 1.5px solid $color-white;
+        }
+    }
+}
+
+// NAVBAR
+#navbar {
+    background-color: #E5F0E7;
+    @include flex(row, space-around, center);
+
+    .logo {
+        width: 3.5rem;
+    }
+    
+    .brand-name {
+        font-weight: 800;
+        font-size: 1.6rem;    
+    }
+
+    .nav-icons-wrapper {  
+        @include flex(row, center, center);
+        
+        .nav-icon {
+            width: 1.7rem;  
+            cursor: pointer;
+            user-select: none; 
+            margin-right: 0.5rem; 
+        }
+    }
+}
+
+// SHOWCASE
+#parent-showcase {
+    @include flex(column, center, center);
+
+    div.showcase {
+        width: 100%;
+        height: 50vh;
+        background: url("../images/wallpaper.jpg") center center/cover no-repeat;
+        position: relative;
+        @include flex(row, center, center);     
+    }
+
+    div.showcase::before {
+        content:'' ;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.3);   
+    }
+
+    div.showcase-card {
+        width: 65%;
+        background-color: $color-light-green;
+        position: relative;
+        bottom: 3rem; 
+        padding: 0.7rem 0;
+        @include flex(column, center, center); 
+
+        @include mobile-devices {
+            width: 85%;
+        }
+        
+        h1.showcase-title {
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        p.showcase-text {
+            margin-bottom: 1.1rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        a.showcase-button {
+            @include button-styling (0.6rem 1.5rem, #F5B267, black, 0.9rem, 700);     
+        }
+        
+        a.showcase-button:hover {
+            @include button-hover (#F8BF81, background-color, 0.5s);
+        }
+    } 
+}
+
+ 
+// SECTION DESCRIPTION
+section#section-description {
+    @include flex(column, center, center);
+
+    h1.description-title {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        
+    }
+
+    div.description-wrapper {
+        width: 65%;
+        @include flex(row, space-between, center); 
+        @include mobile-devices {
+            @include flex(column, center, center);
+             
+        }
+
+        div.description {
+            display: flex;
+            @include flex(column, center, center);
+            @include mobile-devices {
+                margin-top: 1.5rem;
+            }
+             
+
+            .icon-description {
+                width: 4.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .description-subtitle {
+                font-size: 1rem;
+                font-weight: 700;
+                margin-bottom: 0.7rem;
+            }
+            
+            .description-text {
+                font-size: 0.9rem;
+                width: 15vw;
+                text-align: center;
+
+                @include mobile-devices {
+                    width: 80vw
+                }
+            }
+        }
+    }
+     
+}
+
+
+// SECTION SEPARATOR
+.hr-section-wrapper {
+    @include flex(row, center, center); 
+}
+
+.hr-section {
+    width: 95%;
+    border: none;
+    border-top: 2px solid black;
+    margin: 3.5rem 0;
+     
+}
+
+
+// SECTION LEARN MORE
+
+section#learn-more { 
+    @include flex(row, space-evenly, center); 
+    @include mobile-devices{
+        @include flex(column, center, center);
+    }
+
+    .video-learn-more {   
+       max-width: 60vw;
+       @include mobile-devices {
+           max-width: 90vw;
+       }
+    }
+
+    .content-learn-more {
+        max-width: 30vw;
+        @include mobile-devices {
+            max-width: 90vw;
+            margin-top: 1.5rem;
+        }
+
+        .title-learn-more {
+            font-size: 0.9rem;
+            margin-bottom: 5%;
+        }
+        
+        .subtitle-learn-more {
+            font-size: 1.7rem;
+            margin-bottom: 3%;
+        }
+        
+        .text-learn-more {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 2.2rem;
+        }
+        
+        button.button-learn-more {
+            @include button-styling (0.6rem 1.5rem, $color-medium-green, $color-white, 0.9rem, 700);       
+        }
+        
+        button.button-learn-more:hover {
+            @include button-hover (#468750, background-color, 0.5s);
+        }
+    }
+}
+
+
+// SECTION PRODUCTS
+
+section#section-products {
+    @include flex(column,center,center);
+    margin-bottom: 4rem;
+
+    div.products-wrapper {
+        width: 60%;
+        overflow-x: scroll;
+        white-space: nowrap;
+        margin-top: 1rem;
+        @include mobile-devices {
+            width: 80%;
+        }
+
+        div.product {
+            display: inline-block;
+            padding-bottom: 1rem;
+            margin: 0 1rem;
+            
+            img {
+                width: 100%;
+                height: 18rem;
+            }
+
+            p.product-name {
+                font-weight: bold
+            }
+
+            button {
+                @include button-styling (0.3rem 0.8rem, $color-medium-green, $color-white, 0.9rem, 700);
+            }
+        }
+          
+    }
+}
+     
+ 
+
+// SECTION CONTACT
+#section-contact {
+    @include flex(column, center, center); 
+    background-color: $color-light-green;
+    padding: 1.8rem 0;
+    margin-bottom: 6rem;
+
+    .title-contact {
+        margin-bottom: 2.5rem;
+        font-size: 1.5rem;
+
+        @include mobile-devices {
+            font-size: 0.9rem;
+        }
+         
+    }
+
+    .form-email-contact {
+        @include flex(row, center, center); 
+
+        button.button-submit-email {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+             
+             
+            .fa-angle-right {
+                color:$color-medium-green;
+            }
+            
+        }
+        
+        .email-input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid $color-medium-green;
+            outline: none;
+             
+        }
+        
+        .email-input::placeholder {
+            color: black;
+            font-weight: 400;
+        }
+    }
+}
+
+
+// FOOTER
+#footer {
+    background-color: $color-dark-green;
+    @include flex( column, space-between, center); 
+    
+    
+
+    div.footer-links {
+        @include flex(row, space-evenly, center); 
+        padding: 3rem 0;
+        width: 100%;
+        
+        div.links {
+            width: 100%;
+            @include flex(column,center,center);
+
+            .footer-links-category-title {
+                font-size: 1rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                color: $color-white;
+
+                @include mobile-devices {
+                    font-size: 0.8rem;
+                }
+            }
+    
+            .footer-link {
+                font-size: 0.9rem;
+                font-weight: 300;
+                color: $color-white;
+                margin-bottom: 0.7rem;
+
+                @include mobile-devices {
+                    font-size: 0.7rem;
+                }
+            }
+
+            .form-email-contact {
+                @include flex(row, center, center); 
+    
+                .email-input-footer {
+                    border: none; 
+                    outline: none;
+                    width: 8rem;
+                    padding: 2px 5px;
+                     
+                }
+                .email-input-footer::placeholder {
+                    color: $color-dark-green;
+                    font-size: 0.7rem;
+                }
+                
+                .button-submit-email-footer {
+                    background-color: $color-dark-green;
+                    border: none;
+                    cursor: pointer;
+    
+                    .fa-angle-right-footer {
+                        color: $color-white;
+                    }
+                     
+                }
+            }
+        }
+
+         
+        div.footer-icons-wrapper {
+            margin-top: 0.7rem;
+
+            .footer-icon {
+                color: $color-white;
+                margin-right: 0.3rem;
+            }
+             
+        }
+    }
+
+    
+    div.footer-info {
+        @include flex(row, center, center); 
+        padding: 1.5rem 0;
+
+        a {
+            color: $color-white;
+            margin: 0 0.7rem;
+            font-size: 0.8rem;
+
+            @include mobile-devices {
+                font-size: 0.7rem;
+            }
+        }
+         
+    }
+}
+
+
+
+
+ 
+
+
+
+ 
+ 
+
+
+ 
+
+ 
